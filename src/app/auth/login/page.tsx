@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signIn } from "@/lib/supabaseClient";
+import Link from "next/link";
 
 export default function LoginPage() {
     const [email, setEmail] = useState("");
@@ -61,7 +62,9 @@ export default function LoginPage() {
                     >
                         Log In
                     </button>
-
+                </div>
+                <div className="flex gap-4">
+                    <Link className="text-blue-500 underline hover:text-blue-700" href="/auth/forgot-password">forgot password</Link>
                 </div>
             </form>
             {message && <p className="mt-4 text-red-600">{message}</p>}

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
+import Link from "next/link";
 
 export default function ForgotPasswordPage() {
     const [email, setEmail] = useState("");
@@ -34,6 +35,9 @@ export default function ForgotPasswordPage() {
             >
                 Reset Password
             </button>
+            <div className="flex gap-4">
+                <Link className="text-blue-500 underline hover:text-blue-700 mt-5" href="/auth/login">login</Link>
+            </div>
             {message && <p className="mt-4 text-red-600">{message}</p>}
         </div>
     );
